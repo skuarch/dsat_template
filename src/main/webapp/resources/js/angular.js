@@ -69,12 +69,14 @@ angularAppModule.config(function($routeProvider){
 //------------------------------------------------------------------------------
 //angular controllers
 angularLoginModule.controller('LoginController', ['$scope', function ($scope) {
+    document.title = 'DSAT | Login';    
     $scope.logout = false;
 }]);
 angularAppModule.controller('logoutController', ['$scope', function ($scope) {
     $scope.logout = true;
 }]);
 angularAppModule.controller('takeExamController', ['$scope','$window','$location', function ($scope, $window, $location) {
+    document.title = 'Logout';    
     $scope.$on('$locationChangeStart', function (event, next, current) {        
         if (current.match("\/exams/take")) {
             var c = confirm ('Are you sure you want to leave this page?\n');            
@@ -85,7 +87,8 @@ angularAppModule.controller('takeExamController', ['$scope','$window','$location
     });
 }]);
 angularAppModule.controller('dashboadController', ['$scope', '$http', function ($scope, $http) {
-        
+    
+    document.title = 'DSAT | Dashboard';
     $scope.isLoading = true;  
     $scope.json = '';
     

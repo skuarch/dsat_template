@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class App {
 
-    public static final ModelAndView MAV = new ModelAndView("application/App");
+    public static final ModelAndView MAV = new ModelAndView("application/app");
 
     //==========================================================================
     @RequestMapping(value = {"/app"})
