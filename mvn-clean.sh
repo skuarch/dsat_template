@@ -1,22 +1,28 @@
 #!/bin/bash
 
+echo "---------------------------------------------------------"
+echo "[command] mvn install"
+echo
+
 mvn install
 
 if [ "$?" -ne 0 ]; then
-    echo "Maven install Unsuccessful!"
+    echo "[result] Maven install Unsuccessful!"
     exit 1
 fi
 
-read -p "Do you want to add alll the files to the repository (git add *)?" yn
-    case $yn in
-        [Yy]* ) git add *; break;;
-        [Nn]* ) echo "do the git add command manually" exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
+while true; do
+    read -p "[input] Do you want to add all the files to the repository (git add *)?" yn
+        case $yn in
+            [Yy]* ) git add *; break;;
+            [Nn]* ) echo "[result] do the git add command manually"; exit 1;;
+            * ) echo "[input] Please answer yes or no.";;
+        	esac
+done
 
-echo "commit message"
+echo "---------------------------------------------------------"
+echo "[command] git commit"
 read commitMessage
 git commit -m"$commitMessage"
-
 git push -u origin master
 
