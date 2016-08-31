@@ -3,13 +3,20 @@
 mvn install
 
 if [ "$?" -ne 0 ]; then
-    echo "Maven Clean Unsuccessful!"
+    echo "Maven install Unsuccessful!"
     exit 1
 fi
 
-git add *
+read -p "Do you want to add alll the files to the repository (git add *)?" yn
+    case $yn in
+        [Yy]* ) git add *; break;;
+        [Nn]* ) echo "do the git add command manually" exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
 
-git commit -m"testing some things"
+echo "commit message"
+read commitMessage
+git commit -m"$commitMessage"
 
 git push -u origin master
 
