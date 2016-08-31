@@ -12,7 +12,7 @@ if [ "$?" -ne 0 ]; then
 fi
 
 while true; do
-    read -p "[INPUT] Do you want to add all the files to the repository (git add *)?" yn
+    read -p "[INPUT] Do you want to add all the files to the repository (git add *)? " yn
         case $yn in
             [Yy]* ) git add *; break;;
             [Nn]* ) echo "[RESULT] do the git add command manually"; exit 1;;
