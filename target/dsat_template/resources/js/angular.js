@@ -1,0 +1,1 @@
+var context="/dsat_template";var angularIndex=angular.module("angularIndex",["ngRoute"]).config(function(a){a.when("/",{templateUrl:context+"/resources/html/login/index.html",controller:"indexController"})}).controller("indexController",["$scope",function(a){document.title="mocos"}]);

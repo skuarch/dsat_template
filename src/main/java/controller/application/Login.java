@@ -15,7 +15,7 @@ public class Login {
 
     //==========================================================================
     @RequestMapping(value = {"/login", "/", "index.*"})
-    public ModelAndView index() {        
+    public ModelAndView index() {     System.out.println("ebnto9");   
         return MAV;
     }
 
