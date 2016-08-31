@@ -22,6 +22,7 @@ done
 
 echo "---------------------------------------------------------"
 echo "[command] git commit"
+echo "[input] please enter the commit message"
 read commitMessage
 git commit -m"$commitMessage"
 git push -u origin master
